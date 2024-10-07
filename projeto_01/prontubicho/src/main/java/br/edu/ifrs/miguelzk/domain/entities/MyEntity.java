@@ -1,4 +1,4 @@
-package br.edu.ifrs.miguelzk;
+package br.edu.ifrs.miguelzk.domain.entities;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
