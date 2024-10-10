@@ -1,4 +1,4 @@
-package br.edu.ifrs.miguelzk.adapter.repositoryimpl;
+package br.edu.ifrs.miguelzk.domain.repository.impl;
 
 import java.util.List;
 

@@ -7,6 +7,8 @@ import lombok.Data;
 
 @Data
 public class AnimalResponseDTO {
+
+    private Long id;
     private String idMicrochip;
     private DateJavaType dataCriacao;
     private DateJavaType dataNascimento;

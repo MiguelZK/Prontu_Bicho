@@ -1,7 +1,8 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 
 /**
@@ -24,6 +25,9 @@ import jakarta.persistence.Entity;
  * }
  */
 @Entity
-public class MyEntity extends PanacheEntity {
-    public String field;
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class MedVet extends Usuario {
+    private int cmrv;
+    private String especialidade;
 }

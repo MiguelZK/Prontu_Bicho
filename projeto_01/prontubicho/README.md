@@ -70,3 +70,8 @@ Create your first JPA entity
 
 [Related Hibernate with Panache section...](https://quarkus.io/guides/hibernate-orm-panache)
 
+### Agradecimentos e Referências
+
+https://medium.com/@anderson.carlosb/aplicando-os-princ%C3%ADpios-de-clean-architecture-no-quarkus-07ddb02dcdf9
+
+https://github.com/acbueno/clean-architecture-pizza/blob/main/src/main/java/br/acbueno/clean/architecture/pizza/application/dto/CustomerResponseDTO.java

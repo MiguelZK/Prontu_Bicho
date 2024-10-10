@@ -81,13 +81,13 @@
             <mxPoint x="-22" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="23" value="&lt;div&gt;&lt;b&gt;Tutor&lt;/b&gt;&lt;b&gt;Service&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="11">
+        <mxCell id="23" value="&lt;div&gt;&lt;b&gt;Usuario&lt;/b&gt;&lt;b&gt;Service&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="11">
           <mxGeometry x="560" y="1350" width="197.89" height="97.19688120706805" as="geometry" />
         </mxCell>
         <mxCell id="24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="23">
           <mxGeometry y="25" width="197.89" height="15" as="geometry" />
         </mxCell>
-        <mxCell id="25" value="+ verPerfil() : Tutor" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="23">
+        <mxCell id="25" value="+ verPerfil() : Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="23">
           <mxGeometry y="40" width="197.89" height="19.065627069022682" as="geometry" />
         </mxCell>
         <mxCell id="26" value="+ listaAnimais() : List&amp;lt;Vinculos&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="23">
@@ -99,7 +99,7 @@
         <mxCell id="28" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;" edge="1" parent="11" source="29" target="15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="29" value="&lt;div&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;MedicoVeterinario&lt;/b&gt;&lt;b&gt;Service&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="11">
+        <mxCell id="29" value="&lt;div&gt;&lt;b style=&quot;batendimento-color: var(--batendimento-color);&quot;&gt;MedicoVeterinario&lt;/b&gt;&lt;b&gt;Service&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="11">
           <mxGeometry x="550" y="1500" width="240" height="116.26250827609073" as="geometry" />
         </mxCell>
         <mxCell id="30" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="29">
@@ -155,7 +155,7 @@
         <mxCell id="46" value="+ emiteDocumentos(String tipo) : File" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="41">
           <mxGeometry y="97.19688120706805" width="330" height="19.065627069022682" as="geometry" />
         </mxCell>
-        <mxCell id="47" value="+ listaTutores() : List&amp;lt;Vinculos&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="41">
+        <mxCell id="47" value="+ listaUsuarioes() : List&amp;lt;Vinculos&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="41">
           <mxGeometry y="116.26250827609073" width="330" height="19.065627069022682" as="geometry" />
         </mxCell>
         <mxCell id="48" value="+ listaAtendimentos() : List&amp;lt;Atendimentos&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="41">
@@ -361,16 +361,16 @@
         <mxCell id="105" value="+ listaAnimal(): List&amp;lt;Animal&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="102">
           <mxGeometry y="51.69187789663175" width="245.11" height="19.065627069022682" as="geometry" />
         </mxCell>
-        <mxCell id="106" value="&lt;div&gt;&lt;b&gt;TutorDAO&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="85">
+        <mxCell id="106" value="&lt;div&gt;&lt;b&gt;UsuarioDAO&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="85">
           <mxGeometry x="70" y="1410" width="245.11" height="70.75750496565443" as="geometry" />
         </mxCell>
         <mxCell id="107" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="106">
           <mxGeometry y="25" width="245.11" height="7.6262508276090735" as="geometry" />
         </mxCell>
-        <mxCell id="108" value="+ buscaTutor(): Tutor" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="106">
+        <mxCell id="108" value="+ buscaUsuario(): Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="106">
           <mxGeometry y="32.62625082760907" width="245.11" height="19.065627069022682" as="geometry" />
         </mxCell>
-        <mxCell id="109" value="+ listaTutores(): List&amp;lt;Tutor&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="106">
+        <mxCell id="109" value="+ listaUsuarioes(): List&amp;lt;Usuario&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="106">
           <mxGeometry y="51.69187789663175" width="245.11" height="19.065627069022682" as="geometry" />
         </mxCell>
         <mxCell id="110" value="&lt;div&gt;&lt;b&gt;MedicoVeterinarioDAO&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="85">
@@ -647,7 +647,7 @@
             <mxPoint x="-22" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="194" value="&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;/i&gt;&lt;div&gt;&lt;b&gt;Tutor&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="180">
+        <mxCell id="194" value="&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;/i&gt;&lt;div&gt;&lt;b&gt;Usuario&lt;/b&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="180">
           <mxGeometry x="644.6413073538654" y="1349.9982383155852" width="113.2495285983658" height="60" as="geometry" />
         </mxCell>
         <mxCell id="195" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="194">
@@ -656,7 +656,7 @@
         <mxCell id="196" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;" edge="1" parent="180" source="197" target="184">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="197" value="&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;/i&gt;&lt;div&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;MedicoVeterinario&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="180">
+        <mxCell id="197" value="&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;/i&gt;&lt;div&gt;&lt;b style=&quot;batendimento-color: var(--batendimento-color);&quot;&gt;MedicoVeterinario&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="180">
           <mxGeometry x="628.59" y="1450" width="145.36" height="98.13125413804536" as="geometry" />
         </mxCell>
         <mxCell id="198" value="- CMRV : int" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="197">
@@ -829,7 +829,7 @@
         <mxCell id="251" value="- imagens : List&amp;lt;BufferedImage&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="249">
           <mxGeometry y="59.06562706902268" width="240" height="19.065627069022682" as="geometry" />
         </mxCell>
-        <mxCell id="252" value="- relatoTutor : String" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="249">
+        <mxCell id="252" value="- relatoUsuario : String" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="249">
           <mxGeometry y="78.13125413804536" width="240" height="19.065627069022682" as="geometry" />
         </mxCell>
         <mxCell id="253" value="- exameClinico : String" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="249">
@@ -853,7 +853,7 @@
         <mxCell id="259" value="- observarProxConsulta : String" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="249">
           <mxGeometry y="211.5906436212042" width="240" height="19.065627069022682" as="geometry" />
         </mxCell>
-        <mxCell id="260" value="- validacaoPelosTutores : List&amp;lt;Date&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="249">
+        <mxCell id="260" value="- validacaoPelosUsuarioes : List&amp;lt;Date&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="249">
           <mxGeometry y="230.6562706902269" width="240" height="19.065627069022682" as="geometry" />
         </mxCell>
         <mxCell id="261" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="249">
