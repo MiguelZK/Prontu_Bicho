@@ -20,7 +20,7 @@ public class CreateUsuarioUseCaseImpl implements CreateUsuarioUseCase {
   @Override
   public UsuarioResponseDTO execute(UsuarioRequestDTO request) {
     Usuario usuario = modelMapper.map(request, Usuario.class);
-    Usuario saveAtendimento = usuarioRepository.saveAtendimento(usuario);
+    Usuario saveAtendimento = usuarioRepository.save(usuario);
     return modelMapper.map(saveAtendimento, UsuarioResponseDTO.class);
   }
 

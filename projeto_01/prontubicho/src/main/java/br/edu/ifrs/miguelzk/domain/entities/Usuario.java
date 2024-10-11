@@ -1,11 +1,10 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
-import java.util.List;
-
-import org.hibernate.type.descriptor.java.DateJavaType;
+//import java.util.Date;
+import java.util.Set;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -33,8 +32,15 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Usuario extends PanacheEntity {
+
     private String nome;
-    private DateJavaType dataNascimento;
-    private DateJavaType dataCadastro;
-    private List<String> emails;
+//    private Date dataNascimento;
+//    private Date dataCadastro;
+
+    @ElementCollection
+    @CollectionTable(name="emails")
+    private Set<String> emails;
+
+    @ManyToMany(mappedBy = "idanimal")
+    private Set<Animal> Animais;
 }

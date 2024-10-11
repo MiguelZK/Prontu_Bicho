@@ -8,5 +8,5 @@ public interface AtendimentoRepository {
     Atendimento findByAtendimentoId(Long id);
     List<Atendimento> findAllAtendimento();
     Atendimento save(Atendimento atendimento);
-    void deleteAtendimento(Long id);
+    void deleteAtendimentoById(Long id);
 }

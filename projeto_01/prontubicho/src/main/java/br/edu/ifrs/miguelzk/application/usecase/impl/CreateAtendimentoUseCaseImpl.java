@@ -48,7 +48,7 @@ public class CreateAtendimentoUseCaseImpl implements CreateAtendimentoUseCase {
         .mapToDouble(item -> item.getAnimal().getPrice() * item.getQuantity())
         .sum();
     atendimento.setTotal(total);
-    Atendimento saveatendimento = atendimentoRepository.saveAtendimento(atendimento);
+    Atendimento saveatendimento = atendimentoRepository.save(atendimento);
 
     return modelMapper.map(saveatendimento, AtendimentoResponseDTO.class);
   }
