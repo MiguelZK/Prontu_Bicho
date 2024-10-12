@@ -11,8 +11,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 public class AnimalRepositoryImpl implements AnimalRepository, PanacheRepositoryBase<Animal, Long> {
 
   @Override
-  public Animal findByAnimalId(Long id) {
-    return findById(id);
+  public Animal findByAnimalId(Long idAnimal) {
+    return findById(idAnimal);
   }
 
   @Override

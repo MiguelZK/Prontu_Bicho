@@ -9,7 +9,6 @@ import br.edu.ifrs.miguelzk.application.dto.AtendimentoRequestDTO;
 import br.edu.ifrs.miguelzk.application.dto.AtendimentoResponseDTO;
 import br.edu.ifrs.miguelzk.application.usecase.CreateAtendimentoUseCase;
 import br.edu.ifrs.miguelzk.domain.entities.Atendimento;
-import br.edu.ifrs.miguelzk.domain.entities.AtendimentoItem;
 import br.edu.ifrs.miguelzk.domain.entities.Animal;
 import br.edu.ifrs.miguelzk.domain.repository.UsuarioRepository;
 import br.edu.ifrs.miguelzk.domain.repository.AtendimentoRepository;
@@ -17,22 +16,24 @@ import br.edu.ifrs.miguelzk.domain.repository.AnimalRepository;
 
 public class CreateAtendimentoUseCaseImpl implements CreateAtendimentoUseCase {
 
-  private AtendimentoRepository atendimentoRepository;
-  private UsuarioRepository usuarioRepository;
-  private AnimalRepository animalRepository;
-  private ModelMapper modelMapper;
+    private AtendimentoRepository atendimentoRepository;
+    private UsuarioRepository usuarioRepository;
+    private AnimalRepository animalRepository;
+    private ModelMapper modelMapper;
 
-  public CreateAtendimentoUseCaseImpl(AtendimentoRepository atendimentoRepository, UsuarioRepository usuarioRepository, AnimalRepository animalRepository, ModelMapper modelMapper) {
-    this.atendimentoRepository = atendimentoRepository;
-    this.usuarioRepository = usuarioRepository;
-    this.animalRepository = animalRepository;
-    this.modelMapper = modelMapper;
-  }
+    public CreateAtendimentoUseCaseImpl(AtendimentoRepository atendimentoRepository, UsuarioRepository usuarioRepository, AnimalRepository animalRepository, ModelMapper modelMapper) {
+        this.atendimentoRepository = atendimentoRepository;
+        this.usuarioRepository = usuarioRepository;
+        this.animalRepository = animalRepository;
+        this.modelMapper = modelMapper;
+    }
 
-  @Override
-  public AtendimentoResponseDTO execute(AtendimentoRequestDTO atendimentoRequest) {
-    Atendimento atendimento = new Atendimento();
-    List<AtendimentoItem> items = atendimentoRequest.getItems().stream()
+    @Override
+    public AtendimentoResponseDTO execute(AtendimentoRequestDTO atendimentoRequest) {
+        Atendimento atendimento = new Atendimento();
+        Animal animal = animalRepository.findByAnimalId()
+        atendimento.setAnimal(animal);
+/*    List<AtendimentoItem> items = atendimentoRequest.getItems().stream()
         .map(itemDTO -> {
           AtendimentoItem item = new AtendimentoItem();
           item.setQuantity(itemDTO.getQuantity());
@@ -47,10 +48,10 @@ public class CreateAtendimentoUseCaseImpl implements CreateAtendimentoUseCase {
     double total = items.stream()
         .mapToDouble(item -> item.getAnimal().getPrice() * item.getQuantity())
         .sum();
-    atendimento.setTotal(total);
-    Atendimento saveatendimento = atendimentoRepository.save(atendimento);
+    atendimento.setTotal(total);*/
+        Atendimento saveatendimento = atendimentoRepository.save(atendimento);
 
-    return modelMapper.map(saveatendimento, AtendimentoResponseDTO.class);
-  }
+        return modelMapper.map(saveatendimento, AtendimentoResponseDTO.class);
+    }
 
 }

@@ -1,6 +1,7 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
 import java.util.List;
+import java.util.Set;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
@@ -28,7 +29,20 @@ public class Atendimento extends PanacheEntityBase {
     private String tratamentoInstituido;
     private String observarProxConsulta;
 //    private List<DateJavaType> validacaoPelosTutores;
+
     @ManyToOne
     @JoinColumn(name="idanimal")
     private Animal animal;
+
+    @ManyToMany
+    @JoinTable( name="atendim_usuarios",
+            joinColumns={ @JoinColumn(name="idAtendimento")},
+            inverseJoinColumns={@JoinColumn(name="idUsuario")})
+    private Set<Usuario> usuarios;
+
+    @ManyToMany
+    @JoinTable( name="atendim_medvets",
+            joinColumns={ @JoinColumn(name="idAtendimento")},
+            inverseJoinColumns={@JoinColumn(name="idMedVet")})
+    private Set<MedVet> medVets;
 }

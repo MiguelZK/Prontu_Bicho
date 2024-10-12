@@ -4,6 +4,7 @@ package br.edu.ifrs.miguelzk.domain.entities;
 import java.util.Set;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -31,7 +32,11 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Usuario extends PanacheEntity {
+public class Usuario extends PanacheEntityBase {
+
+    @Id
+    @GeneratedValue
+    private Long idUsuario;
 
     private String nome;
 //    private Date dataNascimento;

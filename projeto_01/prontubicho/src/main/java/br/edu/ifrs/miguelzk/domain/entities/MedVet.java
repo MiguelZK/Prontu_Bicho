@@ -1,8 +1,13 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.Set;
 
 
 /**
@@ -28,6 +33,14 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class MedVet extends Usuario {
+
+    @Id
+    @GeneratedValue
+    private Long idMedVet;
+
     private int cmrv;
     private String especialidade;
+
+    @ManyToMany(mappedBy = "medVets")
+    private Set<Atendimento> atendimentos;
 }
