@@ -2,6 +2,7 @@ package br.edu.ifrs.miguelzk.domain.entities;
 
 //import java.util.Date;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Set;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -11,28 +12,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
-
-/**
- * Example JPA entity defined as a Panache Entity.
- * An ID field of Long type is provided, if you want to define your own ID field extends <code>PanacheEntityBase</code> instead.
- *
- * This uses the active record pattern, you can also use the repository pattern instead:
- * .
- *
- * Usage (more example on the documentation)
- *
- * {@code
- *     public void doSomething() {
- *         MyEntity entity1 = new MyEntity();
- *         entity1.field = "field-1";
- *         entity1.persist();
- *
- *         List<MyEntity> entities = MyEntity.listAll();
- *     }
- * }
- */
 @Entity
+@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS)
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Usuario extends PanacheEntityBase {
@@ -42,8 +25,13 @@ public class Usuario extends PanacheEntityBase {
     private Long idUsuario;
 
     private String nome;
-//    private Date dataNascimento;
-//    private Date dataCadastro;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date dataNascimento;
+
+    @CreationTimestamp
+    private Date dataCadastro;
 
     @ElementCollection
     @CollectionTable(name="emails")

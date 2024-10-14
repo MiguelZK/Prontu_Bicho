@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 import br.edu.ifrs.miguelzk.application.enums.PorteCachorro;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -20,19 +22,32 @@ public class Animal extends PanacheEntityBase {
 
     private String idMicrochip;
 
-/*    private Date dataCriacao;
+
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date dataNascimento;
+
+    @CreationTimestamp
+    private Date dataCadastro;
+
+    @Temporal(TemporalType.DATE)
     private Date dataFalecimento;
+
     private Boolean idadeAproximada;
+
     @Column(nullable = false)
     private String temperamento;
+
     @Column(nullable = false)
     private String cor;
+
     @Column(nullable = false)
     private String sinaisParticulares;
+
     @Column(nullable = false)
     private String tipoPelagem;
- */
+
     @Column(nullable = false)
     private Double peso;
 

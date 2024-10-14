@@ -1,15 +1,14 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
-import java.util.List;
+import java.util.Date;
 import java.util.Set;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
-import org.hibernate.type.descriptor.java.DateJavaType;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Data
@@ -20,6 +19,13 @@ public class Atendimento extends PanacheEntityBase {
     @Id
     @GeneratedValue
     private Long idAtendimento;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date dataAtendimento;
+
+    @CreationTimestamp
+    private Date dataCadastro;
 
     private String relatoTutor;
     private String exameClinico;
