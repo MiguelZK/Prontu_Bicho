@@ -40,6 +40,10 @@ public class AnimalService {
     return findAnimalUseCase.execute(id);
   }
 
+  public List<AnimalResponseDTO> findAnimalByName(String nomeAnimal) {
+    return findAnimalUseCase.execute(nomeAnimal);
+  }
+
   @Transactional
   public void deleteAnimalById(Long id) {
     deleteAnimalUseCase.execute(id);

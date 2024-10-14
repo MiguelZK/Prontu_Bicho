@@ -21,6 +21,11 @@ public class AnimalRepositoryImpl implements AnimalRepository, PanacheRepository
   }
 
   @Override
+  public List<Animal> findAnimalByName(String nomeAnimal) {
+    return find("nome like ?1", "%" + nomeAnimal + "%").list();
+  }
+
+  @Override
   public Animal save(Animal animal) {
     persist(animal);
     return animal;

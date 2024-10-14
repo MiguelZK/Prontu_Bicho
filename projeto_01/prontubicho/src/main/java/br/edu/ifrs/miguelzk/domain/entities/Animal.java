@@ -6,9 +6,6 @@ import jakarta.persistence.*;
 import br.edu.ifrs.miguelzk.application.enums.PorteCachorro;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -20,9 +17,8 @@ public class Animal extends PanacheEntityBase {
     @GeneratedValue
     private Long idAnimal;
 
-    private String idMicrochip;
-
-
+    private String nomeAnimal;
+/*    private String idMicrochip;
 
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
@@ -35,6 +31,15 @@ public class Animal extends PanacheEntityBase {
     private Date dataFalecimento;
 
     private Boolean idadeAproximada;
+    private Boolean comunitario;
+
+    @OneToOne (cascade = CascadeType.PERSIST)
+    @JoinColumn (name = "idEspecie")
+    private Especie especie;
+
+    @OneToOne (cascade = CascadeType.PERSIST)
+    @JoinColumn (name = "idRaca")
+    private Raca raca;
 
     @Column(nullable = false)
     private String temperamento;
@@ -52,7 +57,7 @@ public class Animal extends PanacheEntityBase {
     private Double peso;
 
     @Column(nullable = false)
-    private String descricao;
+    private String descricao;*/
     private PorteCachorro porteCachorro;
 
     @ManyToMany(cascade = CascadeType.PERSIST, targetEntity = Usuario.class)

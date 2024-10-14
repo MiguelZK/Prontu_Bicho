@@ -50,6 +50,6 @@ public class Atendimento extends PanacheEntityBase {
     @ManyToMany
     @JoinTable( name="atendim_medvets",
             joinColumns={ @JoinColumn(name="idAtendimento")},
-            inverseJoinColumns={@JoinColumn(name="idMedVet")})
+            inverseJoinColumns={@JoinColumn(name="cmrv")})
     private Set<MedVet> medVets;
 }

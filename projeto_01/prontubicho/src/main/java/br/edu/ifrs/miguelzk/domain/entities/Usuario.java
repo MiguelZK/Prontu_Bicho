@@ -1,18 +1,11 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
-//import java.util.Date;
-import java.util.Collection;
-import java.util.Date;
 import java.util.Set;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Inheritance (strategy = InheritanceType.TABLE_PER_CLASS)
@@ -26,7 +19,7 @@ public class Usuario extends PanacheEntityBase {
 
     private String nome;
 
-    @Column(nullable = false)
+/*    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
 
@@ -35,11 +28,21 @@ public class Usuario extends PanacheEntityBase {
 
     @ElementCollection
     @CollectionTable(name="emails")
-    private Set<String> emails;
+    private Set<String> emails;*/
 
-    @Setter
-    @Getter
     @ManyToMany(mappedBy = "usuarios")
     private Set<Animal> animais;
 
+/*    @OneToOne (cascade = CascadeType.PERSIST)
+    @JoinColumn (name = "idCpf")
+    private Cpf cpf;
+
+    @OneToMany
+    @JoinColumn (name = "idTelefone")
+    private Set<Telefone> telefones;
+
+    @OneToMany
+    @JoinColumn (name = "idEndereco")
+    private Set<Endereco> enderecos;
+ */
 }

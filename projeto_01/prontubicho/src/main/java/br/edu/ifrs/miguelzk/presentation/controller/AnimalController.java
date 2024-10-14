@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.Response;
 public class AnimalController {
 
   @Inject
-  private AnimalService animalService;
+  public AnimalService animalService;
 
   @POST
   public Response createAnimal(@RequestBody AnimalRequestDTO request) {
@@ -23,8 +23,14 @@ public class AnimalController {
   }
 
   @GET
-  public Response findAllAnimal() {
+  public Response findAnimalAll() {
     return Response.ok().entity(animalService.findAnimalAll()).build();
+  }
+
+  @GET
+  @Path("/{nomeAnimal}")
+  public Response findAnimalByName(@PathParam("nomeAnimal") String nomeAnimal) {
+    return Response.ok().entity(animalService.findAnimalByName(nomeAnimal)).build();
   }
 
   @GET

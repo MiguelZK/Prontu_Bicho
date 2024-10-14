@@ -10,7 +10,7 @@ import br.edu.ifrs.miguelzk.domain.repository.UsuarioRepository;
 
 public class FindUsuarioUseCaseImpl implements FindUsuarioUseCase {
 
-  private UsuarioRepository usuarioRepository;
+  private final UsuarioRepository usuarioRepository;
   private final ModelMapper modelMapper;
 
   public FindUsuarioUseCaseImpl(UsuarioRepository usuarioRepository, ModelMapper modelMapper) {
@@ -26,9 +26,9 @@ public class FindUsuarioUseCaseImpl implements FindUsuarioUseCase {
   @Override
   public List<UsuarioResponseDTO> execute() {
     List<UsuarioResponseDTO> listResponseDTOs = new ArrayList<>();
-    List<Usuario> listCustonerEtity = usuarioRepository.findUsuarioAll();
+    List<Usuario> listUsuarioEtity = usuarioRepository.findUsuarioAll();
 
-    for (Usuario usuario : listCustonerEtity) {
+    for (Usuario usuario : listUsuarioEtity) {
         listResponseDTOs.add(modelMapper.map(usuario, UsuarioResponseDTO.class));
     }
 
