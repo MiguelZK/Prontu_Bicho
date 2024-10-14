@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Data
@@ -14,5 +15,5 @@ public class VinculoUsuarioAnimal extends PanacheEntity {
     private String nomeAnimal;
 //    private Date inicioVinculo;
 //    private Date fimVinculo;
-    private Set<Animal> animais;
+//    private Set<Animal> animais;
 }

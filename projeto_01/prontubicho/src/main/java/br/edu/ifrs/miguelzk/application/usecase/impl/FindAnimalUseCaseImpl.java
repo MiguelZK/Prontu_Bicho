@@ -21,7 +21,7 @@ public class FindAnimalUseCaseImpl implements FindAnimalUseCase {
   @Override
   public List<AnimalResponseDTO> execute() {
     List<AnimalResponseDTO> listAnimalResponseDTO = new ArrayList<>();
-    List<Animal> listAnimal = animalRepository.findAllAnimal();
+    List<Animal> listAnimal = animalRepository.findAnimalAll();
 
     for (Animal animal : listAnimal) {
       listAnimalResponseDTO.add(modelMapper.map(animal, AnimalResponseDTO.class));
@@ -32,7 +32,7 @@ public class FindAnimalUseCaseImpl implements FindAnimalUseCase {
 
   @Override
   public AnimalResponseDTO execute(Long id) {
-    return modelMapper.map(animalRepository.findByAnimalById(id), AnimalResponseDTO.class);
+    return modelMapper.map(animalRepository.findAnimalById(id), AnimalResponseDTO.class);
   }
 
 }

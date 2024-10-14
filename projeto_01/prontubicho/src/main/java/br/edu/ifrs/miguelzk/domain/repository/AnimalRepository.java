@@ -5,8 +5,8 @@ import br.edu.ifrs.miguelzk.domain.entities.Animal;
 
 public interface AnimalRepository {
     
-    Animal findByAnimalId(Long idAnimal);
-    List<Animal> findAllAnimal();
+    Animal findAnimalById(Long idAnimal);
+    List<Animal> findAnimalAll();
     Animal save(Animal animal);
-    void deleteAnimal(Long id);
+    void deleteAnimalById(Long id);
 }

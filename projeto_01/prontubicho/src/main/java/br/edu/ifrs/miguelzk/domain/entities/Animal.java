@@ -40,14 +40,13 @@ public class Animal extends PanacheEntityBase {
     private String descricao;
     private PorteCachorro porteCachorro;
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.PERSIST, targetEntity = Usuario.class)
     @JoinTable( name="animal_usuario",
-            joinColumns={ @JoinColumn(name="idUsuario")},
-            inverseJoinColumns={@JoinColumn(name="idAnimal")})
-    private Set<Usuario> Usuarios;
+            joinColumns={ @JoinColumn(name="idAnimal")},
+            inverseJoinColumns={@JoinColumn(name="idUsuario")})
+    private Set<Usuario> usuarios;
 
-    @OneToMany(mappedBy = "idanimal")
-    @JoinColumn(name="idatendimento")
+    @OneToMany(mappedBy = "animal")
     private Set<Atendimento> atendimentos;
 
 }

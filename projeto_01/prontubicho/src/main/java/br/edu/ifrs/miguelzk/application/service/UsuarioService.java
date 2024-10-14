@@ -30,7 +30,7 @@ public class UsuarioService {
     return createUsuarioUseCase.execute(request);
   }
 
-  public List<UsuarioResponseDTO> findAllUsuario() {
+  public List<UsuarioResponseDTO> findUsuarioAll() {
     return findUsuarioUseCase.execute();
   }
 

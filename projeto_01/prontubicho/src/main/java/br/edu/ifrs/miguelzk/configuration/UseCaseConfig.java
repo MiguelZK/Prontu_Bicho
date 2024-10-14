@@ -1,23 +1,17 @@
 package br.edu.ifrs.miguelzk.configuration;
 
 
+import br.edu.ifrs.miguelzk.application.usecase.impl.*;
 import org.modelmapper.ModelMapper;
 import br.edu.ifrs.miguelzk.application.usecase.CreateUsuarioUseCase;
 import br.edu.ifrs.miguelzk.application.usecase.CreateAtendimentoUseCase;
 import br.edu.ifrs.miguelzk.application.usecase.CreateAnimalUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.impl.CreateAnimalUseCaseImpl;
 import br.edu.ifrs.miguelzk.application.usecase.DeleteUsuarioUseCase;
 import br.edu.ifrs.miguelzk.application.usecase.DeleteAtendimentoUseCase;
 import br.edu.ifrs.miguelzk.application.usecase.DeleteAnimalUseCase;
 import br.edu.ifrs.miguelzk.application.usecase.FindUsuarioUseCase;
 import br.edu.ifrs.miguelzk.application.usecase.FindAtendimentoUseCase;
 import br.edu.ifrs.miguelzk.application.usecase.FindAnimalUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.impl.DeleteUsuarioUseCaseImpl;
-import br.edu.ifrs.miguelzk.application.usecase.impl.DeleteAtendimentoUseCaseImpl;
-import br.edu.ifrs.miguelzk.application.usecase.impl.DeleteAnimalUseCaseImpl;
-import br.edu.ifrs.miguelzk.application.usecase.impl.FindUsuarioUseCaseImpl;
-import br.edu.ifrs.miguelzk.application.usecase.impl.FindAtendimentoUseCaseImpl;
-import br.edu.ifrs.miguelzk.application.usecase.impl.FindAnimalUseCaseImpl;
 import br.edu.ifrs.miguelzk.domain.repository.UsuarioRepository;
 import br.edu.ifrs.miguelzk.domain.repository.AtendimentoRepository;
 import br.edu.ifrs.miguelzk.domain.repository.AnimalRepository;

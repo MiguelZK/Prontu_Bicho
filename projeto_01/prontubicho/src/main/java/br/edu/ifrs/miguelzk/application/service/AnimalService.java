@@ -32,7 +32,7 @@ public class AnimalService {
     return createAnimalUseCase.execute(request);
   }
 
-  public List<AnimalResponseDTO> findAllAnimal(){
+  public List<AnimalResponseDTO> findAnimalAll(){
     return findAnimalUseCase.execute();
   }
 

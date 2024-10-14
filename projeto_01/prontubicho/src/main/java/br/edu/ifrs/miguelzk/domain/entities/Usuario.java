@@ -1,6 +1,7 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
 //import java.util.Date;
+import java.util.Collection;
 import java.util.Set;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -8,6 +9,8 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 
 /**
@@ -46,6 +49,9 @@ public class Usuario extends PanacheEntityBase {
     @CollectionTable(name="emails")
     private Set<String> emails;
 
-    @ManyToMany(mappedBy = "idanimal")
-    private Set<Animal> Animais;
+    @Setter
+    @Getter
+    @ManyToMany(mappedBy = "usuarios")
+    private Set<Animal> animais;
+
 }

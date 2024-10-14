@@ -20,6 +20,7 @@ public class Atendimento extends PanacheEntityBase {
     @Id
     @GeneratedValue
     private Long idAtendimento;
+
     private String relatoTutor;
     private String exameClinico;
     private String avaliacaoExames;
@@ -31,7 +32,7 @@ public class Atendimento extends PanacheEntityBase {
 //    private List<DateJavaType> validacaoPelosTutores;
 
     @ManyToOne
-    @JoinColumn(name="idanimal")
+    @JoinColumn(name="idAnimal")
     private Animal animal;
 
     @ManyToMany

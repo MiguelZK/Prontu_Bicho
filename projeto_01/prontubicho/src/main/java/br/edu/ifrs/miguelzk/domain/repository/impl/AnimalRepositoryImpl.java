@@ -11,12 +11,12 @@ import jakarta.enterprise.context.ApplicationScoped;
 public class AnimalRepositoryImpl implements AnimalRepository, PanacheRepositoryBase<Animal, Long> {
 
   @Override
-  public Animal findByAnimalId(Long idAnimal) {
+  public Animal findAnimalById(Long idAnimal) {
     return findById(idAnimal);
   }
 
   @Override
-  public List<Animal> findAllAnimal() {
+  public List<Animal> findAnimalAll() {
     return listAll();
   }
 
@@ -27,7 +27,7 @@ public class AnimalRepositoryImpl implements AnimalRepository, PanacheRepository
   }
 
   @Override
-  public void deleteAnimal(Long id) {
+  public void deleteAnimalById(Long id) {
     deleteById(id);
   }
 

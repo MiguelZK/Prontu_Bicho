@@ -26,7 +26,7 @@ public class FindUsuarioUseCaseImpl implements FindUsuarioUseCase {
   @Override
   public List<UsuarioResponseDTO> execute() {
     List<UsuarioResponseDTO> listResponseDTOs = new ArrayList<>();
-    List<Usuario> listCustonerEtity = usuarioRepository.findAllUsuario();
+    List<Usuario> listCustonerEtity = usuarioRepository.findUsuarioAll();
 
     for (Usuario usuario : listCustonerEtity) {
         listResponseDTOs.add(modelMapper.map(usuario, UsuarioResponseDTO.class));

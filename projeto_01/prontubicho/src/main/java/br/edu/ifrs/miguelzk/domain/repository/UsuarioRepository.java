@@ -5,8 +5,8 @@ import br.edu.ifrs.miguelzk.domain.entities.Usuario;
 
 public interface UsuarioRepository {
     
-    Usuario findByUsuarioId(Long id);
-    List<Usuario> findAllUsuario();
+    Usuario findUsuarioById(Long id);
+    List<Usuario> findUsuarioAll();
     Usuario save(Usuario usuario);
-    void deleteUsuario(Long id);
+    void deleteUsuarioById(Long id);
 }

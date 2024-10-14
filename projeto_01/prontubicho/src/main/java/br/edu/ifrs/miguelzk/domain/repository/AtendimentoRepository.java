@@ -4,9 +4,9 @@ import java.util.List;
 import br.edu.ifrs.miguelzk.domain.entities.Atendimento;
 
 public interface AtendimentoRepository {
-    
-    Atendimento findByAtendimentoId(Long id);
-    List<Atendimento> findAllAtendimento();
+
+    Atendimento findAtendimentoById(Long id);
+    List<Atendimento> findAtendimentoAll();
     Atendimento save(Atendimento atendimento);
     void deleteAtendimentoById(Long id);
 }

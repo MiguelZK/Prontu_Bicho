@@ -13,7 +13,7 @@ public class DeleteAnimalUseCaseImpl implements DeleteAnimalUseCase {
 
   @Override
   public void execute(Long id) {
-    animalRepository.deleteAnimal(id);
+    animalRepository.deleteAnimalById(id);
   }
 
 }

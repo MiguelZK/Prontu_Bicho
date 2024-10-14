@@ -1,9 +1,6 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -34,8 +31,7 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = true)
 public class MedVet extends Usuario {
 
-    @Id
-    @GeneratedValue
+    @Column(nullable = false, name = "idmedvet")
     private Long idMedVet;
 
     private int cmrv;

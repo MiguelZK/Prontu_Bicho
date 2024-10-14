@@ -1,8 +1,5 @@
 package br.edu.ifrs.miguelzk.application.usecase.impl;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.modelmapper.ModelMapper;
 
 import br.edu.ifrs.miguelzk.application.dto.AtendimentoRequestDTO;
@@ -31,24 +28,8 @@ public class CreateAtendimentoUseCaseImpl implements CreateAtendimentoUseCase {
     @Override
     public AtendimentoResponseDTO execute(AtendimentoRequestDTO atendimentoRequest) {
         Atendimento atendimento = new Atendimento();
-        Animal animal = animalRepository.findByAnimalId()
+        Animal animal = animalRepository.findAnimalById(atendimentoRequest.getAnimal().getIdAnimal());
         atendimento.setAnimal(animal);
-/*    List<AtendimentoItem> items = atendimentoRequest.getItems().stream()
-        .map(itemDTO -> {
-          AtendimentoItem item = new AtendimentoItem();
-          item.setQuantity(itemDTO.getQuantity());
-          Animal animal = animalRepository.findByAnimalById(itemDTO.getAnimalId());
-          item.setAnimal(animal);
-
-          return item;
-        }).collect(Collectors.toList());
-
-    atendimento.setItems(items);
-    atendimento.setUsuario(usuarioRepository.findUsuarioById(atendimentoRequest.getUsuarioId()));
-    double total = items.stream()
-        .mapToDouble(item -> item.getAnimal().getPrice() * item.getQuantity())
-        .sum();
-    atendimento.setTotal(total);*/
         Atendimento saveatendimento = atendimentoRepository.save(atendimento);
 
         return modelMapper.map(saveatendimento, AtendimentoResponseDTO.class);
