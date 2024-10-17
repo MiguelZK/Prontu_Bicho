@@ -10,14 +10,19 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class UsuarioRepositoryImpl implements UsuarioRepository, PanacheRepositoryBase<Usuario, Long> {
 
+  public Usuario save(Usuario usuario) {
+    persist(usuario);
+    return usuario;
+  }
+
   @Override
   public Usuario findUsuarioById(Long id) {
     return findById(id);
   }
 
-  public Usuario save(Usuario usuario) {
-    persist(usuario);
-    return usuario;
+  @Override
+  public List<Usuario> findUsuarioByName(String nomeUsuario) {
+    return List.of();
   }
 
   @Override
@@ -26,8 +31,13 @@ public class UsuarioRepositoryImpl implements UsuarioRepository, PanacheReposito
   }
 
   @Override
+  public Usuario update(Usuario usuario) {
+    persist(usuario);
+    return usuario;
+  }
+
+  @Override
   public void deleteUsuarioById(Long id) {
     deleteById(id);
   }
-
 }

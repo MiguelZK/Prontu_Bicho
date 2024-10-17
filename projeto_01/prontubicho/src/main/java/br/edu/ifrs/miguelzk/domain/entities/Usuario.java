@@ -2,8 +2,15 @@ package br.edu.ifrs.miguelzk.domain.entities;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.quarkus.elytron.security.common.BcryptUtil;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import io.quarkus.security.jpa.Password;
+import io.quarkus.security.jpa.Roles;
+import io.quarkus.security.jpa.UserDefinition;
+import io.quarkus.security.jpa.Username;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -11,13 +18,27 @@ import lombok.EqualsAndHashCode;
 @Inheritance (strategy = InheritanceType.TABLE_PER_CLASS)
 @Data
 @EqualsAndHashCode(callSuper = true)
+@UserDefinition
 public class Usuario extends PanacheEntityBase {
 
     @Id
     @GeneratedValue
     private Long idUsuario;
 
-    private String nome;
+    @NotBlank(message = "Login é obrigatório")
+    @Column(unique = true)
+    @Username
+    private String userName;
+
+    @NotBlank(message = "Senha é obrigatória")
+    @Password
+    @JsonIgnore
+    private String password;
+
+    @Roles
+    private String role;
+
+    private String nomeCompleto;
 
 /*    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
@@ -45,4 +66,11 @@ public class Usuario extends PanacheEntityBase {
     @JoinColumn (name = "idEndereco")
     private Set<Endereco> enderecos;
  */
+
+    public static void add(String userName, String password, String role) {
+        Usuario usuario = new Usuario();
+        usuario.userName = userName;
+        usuario.password = BcryptUtil.bcryptHash(password);
+        usuario.role = role;
+    }
 }

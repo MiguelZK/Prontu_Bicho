@@ -5,28 +5,19 @@
 -- insert into myentity (id, field) values(3, 'field-3');
 -- alter sequence myentity_seq restart with 4;
 
-insert into usuario (idUsuario, nome)
-values(1, 'Miguel');
+-- Inserindo usuarios
+insert into usuario (idUsuario, nome, userName, password, role)
+values(1, 'Miguel', 'miguel', 'senha123', 'admin, user');
+insert into usuario (idUsuario, nome) values(2, 'Laura');
+insert into usuario (idUsuario, nome) values(3, 'Carol');
 
-insert into usuario (idUsuario, nome)
-values(2, 'Laura');
+-- Inserindo animais
+insert into animal (idAnimal, nomeAnimal, porteCachorro) values(1, 'Shenka', 'PEQUENO');
+insert into animal (idAnimal, nomeAnimal, porteCachorro) values(2, 'Agnes', 'PEQUENO');
+insert into animal (idAnimal, nomeAnimal, porteCachorro) values(3, 'Bidu', 'PEQUENO');
 
-insert into usuario (idUsuario, nome)
-values(3, 'Carol');
-
-insert into animal (idAnimal, nomeAnimal, porteCachorro)
-values(1, 'Shenka', 'PEQUENO');
-
-insert into animal (idAnimal, nomeAnimal, porteCachorro)
-values(1, 'Agnes', 'PEQUENO');
-
-insert into animal (idAnimal, nomeAnimal, porteCachorro)
-values(1, 'Bidu', 'PEQUENO');
-
+-- Relacionando usuarios e animais
 INSERT INTO animal_usuario (idAnimal, idUsuario) VALUES (1, 1);
-
 INSERT INTO animal_usuario (idAnimal, idUsuario) VALUES (1, 2);
-
 INSERT INTO animal_usuario (idAnimal, idUsuario) VALUES (2, 3);
-
 INSERT INTO animal_usuario (idAnimal, idUsuario) VALUES (3, 3);

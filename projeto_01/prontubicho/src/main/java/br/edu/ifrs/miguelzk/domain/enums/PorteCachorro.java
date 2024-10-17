@@ -1,4 +1,4 @@
-package br.edu.ifrs.miguelzk.application.enums;
+package br.edu.ifrs.miguelzk.domain.enums;
 
 import lombok.Getter;
 

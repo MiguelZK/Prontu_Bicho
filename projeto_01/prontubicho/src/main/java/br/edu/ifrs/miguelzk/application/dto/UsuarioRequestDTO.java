@@ -13,7 +13,11 @@ import lombok.Data;
 
 @Data
 public class UsuarioRequestDTO {
-    private String nome;
+
+    private String userName;
+    private String password;
+    private String role;
+    private String nomeCompleto;
     private Cpf cpf;
     private Date dataNascimento;
     private Date dataCadastro;

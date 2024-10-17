@@ -1,5 +1,6 @@
 package br.edu.ifrs.miguelzk.presentation.controller;
 
+import jakarta.annotation.security.RolesAllowed;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import br.edu.ifrs.miguelzk.application.dto.AtendimentoRequestDTO;
 import br.edu.ifrs.miguelzk.application.service.AtendimentoService;
@@ -14,7 +15,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-@Path("/api/atendimento")
+@Path("/api/admin/atendimento")
 public class AtendimentoController {
 
   @Inject
@@ -53,6 +54,7 @@ public class AtendimentoController {
   }
 
   @DELETE
+  @RolesAllowed("admin")
   @Path("/{id}")
   public void deleteAtendimentoById(Long id) {
     atendimentoService.deleteAtendimentoById(id);

@@ -24,12 +24,24 @@ public class FindUsuarioUseCaseImpl implements FindUsuarioUseCase {
   }
 
   @Override
+  public List<UsuarioResponseDTO> execute(String nomeUsuario) {
+    List<UsuarioResponseDTO> listResponseDTO = new ArrayList<>();
+    List<Usuario> listUsuario = usuarioRepository.findUsuarioByName(nomeUsuario);
+
+    for (Usuario usuario : listUsuario) {
+      listResponseDTO.add(modelMapper.map(usuario, UsuarioResponseDTO.class));
+    }
+
+    return listResponseDTO;
+  }
+
+  @Override
   public List<UsuarioResponseDTO> execute() {
     List<UsuarioResponseDTO> listResponseDTOs = new ArrayList<>();
     List<Usuario> listUsuarioEtity = usuarioRepository.findUsuarioAll();
 
     for (Usuario usuario : listUsuarioEtity) {
-        listResponseDTOs.add(modelMapper.map(usuario, UsuarioResponseDTO.class));
+      listResponseDTOs.add(modelMapper.map(usuario, UsuarioResponseDTO.class));
     }
 
     return listResponseDTOs;

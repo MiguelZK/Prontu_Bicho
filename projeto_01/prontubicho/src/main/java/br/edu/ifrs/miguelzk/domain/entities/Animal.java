@@ -3,7 +3,7 @@ package br.edu.ifrs.miguelzk.domain.entities;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
-import br.edu.ifrs.miguelzk.application.enums.PorteCachorro;
+import br.edu.ifrs.miguelzk.domain.enums.PorteCachorro;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import java.util.Set;
@@ -58,6 +58,9 @@ public class Animal extends PanacheEntityBase {
 
     @Column(nullable = false)
     private String descricao;*/
+
+
+    @Enumerated(EnumType.STRING)
     private PorteCachorro porteCachorro;
 
     @ManyToMany(cascade = CascadeType.PERSIST, targetEntity = Usuario.class)

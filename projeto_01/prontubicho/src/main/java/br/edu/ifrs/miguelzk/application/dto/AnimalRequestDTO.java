@@ -1,6 +1,6 @@
 package br.edu.ifrs.miguelzk.application.dto;
 
-import br.edu.ifrs.miguelzk.application.enums.PorteCachorro;
+import br.edu.ifrs.miguelzk.domain.enums.PorteCachorro;
 import br.edu.ifrs.miguelzk.domain.entities.Atendimento;
 import br.edu.ifrs.miguelzk.domain.entities.Usuario;
 import lombok.Data;

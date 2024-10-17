@@ -1,17 +1,9 @@
 package br.edu.ifrs.miguelzk.configuration;
 
 
+import br.edu.ifrs.miguelzk.application.usecase.*;
 import br.edu.ifrs.miguelzk.application.usecase.impl.*;
 import org.modelmapper.ModelMapper;
-import br.edu.ifrs.miguelzk.application.usecase.CreateUsuarioUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.CreateAtendimentoUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.CreateAnimalUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.DeleteUsuarioUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.DeleteAtendimentoUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.DeleteAnimalUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.FindUsuarioUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.FindAtendimentoUseCase;
-import br.edu.ifrs.miguelzk.application.usecase.FindAnimalUseCase;
 import br.edu.ifrs.miguelzk.domain.repository.UsuarioRepository;
 import br.edu.ifrs.miguelzk.domain.repository.AtendimentoRepository;
 import br.edu.ifrs.miguelzk.domain.repository.AnimalRepository;
@@ -64,6 +56,16 @@ public class UseCaseConfig {
     @Produces
     public DeleteAtendimentoUseCase deleteAtendimentoUseCase(AtendimentoRepository atendimentoRepository) {
         return new DeleteAtendimentoUseCaseImpl(atendimentoRepository);
+    }
+
+    @Produces
+    public UpdateAnimalUseCase UpdateAnimalUseCase(AnimalRepository animalRepository, ModelMapper modelMapper) {
+        return new UpdateAnimalUseCaseImpl(animalRepository, modelMapper);
+    }
+
+    @Produces
+    public UpdateUsuarioUseCase UpdateUsuarioUseCase(UsuarioRepository usuarioRepository, ModelMapper modelMapper) {
+        return new UpdateUsuarioUseCaseImpl(usuarioRepository, modelMapper);
     }
 
 }

@@ -9,5 +9,6 @@ public interface AnimalRepository {
     List<Animal> findAnimalAll();
     List<Animal> findAnimalByName(String nomeAnimal);
     Animal save(Animal animal);
+    Animal update(Animal animal);
     void deleteAnimalById(Long id);
 }

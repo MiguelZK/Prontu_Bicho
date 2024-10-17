@@ -11,7 +11,9 @@ import lombok.Data;
 
 @Data
 public class UsuarioResponseDTO {
-  private String nome;
+  private Long idUsuario;
+  private String userName;
+  private String nomeCompleto;
   private Cpf cpf;
   private Date dataNascimento;
   private Date dataCadastro;

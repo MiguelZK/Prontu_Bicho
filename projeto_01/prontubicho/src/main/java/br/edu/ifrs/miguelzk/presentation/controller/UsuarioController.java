@@ -1,16 +1,12 @@
 package br.edu.ifrs.miguelzk.presentation.controller;
 
+import br.edu.ifrs.miguelzk.application.dto.AnimalRequestDTO;
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.ws.rs.*;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import br.edu.ifrs.miguelzk.application.dto.UsuarioRequestDTO;
 import br.edu.ifrs.miguelzk.application.service.UsuarioService;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.DELETE;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -21,10 +17,18 @@ public class UsuarioController {
   UsuarioService usuarioService;
 
   @POST
+  @RolesAllowed("admin")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response create(@RequestBody UsuarioRequestDTO request) {
     return Response.ok().entity(usuarioService.create(request)).build();
+  }
+
+  @PUT
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response updateUsuario(@RequestBody UsuarioRequestDTO request) {
+    return Response.ok().entity(usuarioService.updateUsuario(request)).build();
   }
 
   @GET
@@ -49,6 +53,7 @@ public class UsuarioController {
   }
 
   @DELETE
+  @RolesAllowed("admin")
   public Response deleteUsuarioById(Long id) {
     try {
       usuarioService.deleteUsuarioById(id);
@@ -57,5 +62,4 @@ public class UsuarioController {
       return Response.serverError().build();
     }
   }
-
 }

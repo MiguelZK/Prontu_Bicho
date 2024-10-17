@@ -1,14 +1,12 @@
 package br.edu.ifrs.miguelzk.presentation.controller;
 
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import br.edu.ifrs.miguelzk.application.dto.AnimalRequestDTO;
 import br.edu.ifrs.miguelzk.application.service.AnimalService;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.DELETE;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.Response;
 
 @Path("/api/animal")
@@ -18,28 +16,43 @@ public class AnimalController {
   public AnimalService animalService;
 
   @POST
+  @RolesAllowed("admin")
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
   public Response createAnimal(@RequestBody AnimalRequestDTO request) {
     return Response.ok().entity(animalService.createAnimal(request)).build();
   }
 
+  @PUT
+  @RolesAllowed("admin")
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response updateAnimal(@RequestBody AnimalRequestDTO request) {
+    return Response.ok().entity(animalService.updateAnimal(request)).build();
+  }
+
   @GET
+  @Produces(MediaType.APPLICATION_JSON)
   public Response findAnimalAll() {
     return Response.ok().entity(animalService.findAnimalAll()).build();
   }
 
   @GET
   @Path("/{nomeAnimal}")
+  @Produces(MediaType.APPLICATION_JSON)
   public Response findAnimalByName(@PathParam("nomeAnimal") String nomeAnimal) {
     return Response.ok().entity(animalService.findAnimalByName(nomeAnimal)).build();
   }
 
   @GET
   @Path("/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
   public Response findAnimalById(@PathParam("id") Long id) {
     return Response.ok().entity(animalService.findAnimalById(id)).build();
   }
 
   @DELETE
+  @RolesAllowed("admin")
   @Path("/{id}")
   public Response deleteAnimalById(@PathParam("id") Long id) {
     try {
@@ -49,5 +62,4 @@ public class AnimalController {
      return Response.serverError().build();
     }
   }
-
 }

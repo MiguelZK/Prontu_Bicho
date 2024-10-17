@@ -32,6 +32,12 @@ public class AnimalRepositoryImpl implements AnimalRepository, PanacheRepository
   }
 
   @Override
+  public Animal update(Animal animal) {
+    persist(animal);
+    return animal;
+  }
+
+  @Override
   public void deleteAnimalById(Long id) {
     deleteById(id);
   }
