@@ -9,8 +9,11 @@ public class ModelMapperConfig {
 
   @Produces
   @ApplicationScoped
+//  public ModelMapper modelMapper() {
+//    return new ModelMapper();
+//  }
   public ModelMapper modelMapper() {
-    return new ModelMapper();
+    return new CustomModelMapper();
   }
 
 }

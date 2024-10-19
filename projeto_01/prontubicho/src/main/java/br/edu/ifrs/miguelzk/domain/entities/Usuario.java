@@ -25,14 +25,14 @@ public class Usuario extends PanacheEntityBase {
     @GeneratedValue
     private Long idUsuario;
 
-    @NotBlank(message = "Login é obrigatório")
+//    @NotBlank(message = "Login é obrigatório")
     @Column(unique = true)
     @Username
     private String userName;
 
-    @NotBlank(message = "Senha é obrigatória")
+//    @NotBlank(message = "Senha é obrigatória")
+//    @JsonIgnore
     @Password
-    @JsonIgnore
     private String password;
 
     @Roles

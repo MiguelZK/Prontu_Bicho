@@ -6,10 +6,12 @@
 -- alter sequence myentity_seq restart with 4;
 
 -- Inserindo usuarios
-insert into usuario (idUsuario, nome, userName, password, role)
+insert into usuario (idUsuario, nomeCompleto, userName, password, role)
 values(1, 'Miguel', 'miguel', 'senha123', 'admin, user');
-insert into usuario (idUsuario, nome) values(2, 'Laura');
-insert into usuario (idUsuario, nome) values(3, 'Carol');
+insert into usuario (idUsuario, nomeCompleto, userName, password, role)
+values(2, 'Laura', 'laura', 'senha456', 'user');
+insert into usuario (idUsuario, nomeCompleto, userName, password, role)
+values(3, 'Carol', 'carol', 'senha789', 'user');
 
 -- Inserindo animais
 insert into animal (idAnimal, nomeAnimal, porteCachorro) values(1, 'Shenka', 'PEQUENO');

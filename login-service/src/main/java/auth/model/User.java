@@ -1,8 +1,13 @@
 package auth.model;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.time.LocalDateTime;
 import java.util.Set;
 
+@Data
+@EqualsAndHashCode
 public class User {
 
     private String login;
