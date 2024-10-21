@@ -1,5 +1,6 @@
 package br.edu.ifrs.miguelzk.presentation.controller;
 
+import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -8,6 +9,7 @@ import br.edu.ifrs.miguelzk.application.dto.AnimalRequestDTO;
 import br.edu.ifrs.miguelzk.application.service.AnimalService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
+import org.hibernate.internal.build.AllowSysOut;
 
 @Path("/api/animal")
 public class AnimalController {
@@ -16,15 +18,19 @@ public class AnimalController {
   public AnimalService animalService;
 
   @POST
-  @RolesAllowed("admin")
+//  @RolesAllowed("admin, user")
+  @PermitAll
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response createAnimal(@RequestBody AnimalRequestDTO request) {
+    System.out.println("Request antes de criar animal " + request);
+    System.out.println("Response antes de criar animal " + Response.ok().entity(animalService.createAnimal(request)).build());
     return Response.ok().entity(animalService.createAnimal(request)).build();
   }
 
   @PUT
-  @RolesAllowed("admin")
+//  @RolesAllowed("admin")
+  @PermitAll
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response updateAnimal(@RequestBody AnimalRequestDTO request) {
@@ -52,7 +58,8 @@ public class AnimalController {
   }
 
   @DELETE
-  @RolesAllowed("admin")
+//  @RolesAllowed("admin")
+  @PermitAll
   @Path("/{id}")
   public Response deleteAnimalById(@PathParam("id") Long id) {
     try {

@@ -1,6 +1,7 @@
 package br.edu.ifrs.miguelzk.presentation.controller;
 
 import br.edu.ifrs.miguelzk.application.dto.AnimalRequestDTO;
+import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.*;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
@@ -17,7 +18,8 @@ public class UsuarioController {
   UsuarioService usuarioService;
 
   @POST
-  @RolesAllowed("admin")
+//  @RolesAllowed("admin")
+  @PermitAll
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response create(@RequestBody UsuarioRequestDTO request) {
@@ -52,8 +54,16 @@ public class UsuarioController {
     }
   }
 
+  @GET
+  @Path("/{nomeUsuario}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response findUsuarioByName(@PathParam("nomeUsuario") String nomeUsuario) {
+    return Response.ok().entity(usuarioService.findUsuarioByName(nomeUsuario)).build();
+  }
+
   @DELETE
-  @RolesAllowed("admin")
+//  @RolesAllowed("admin")
+  @PermitAll
   public Response deleteUsuarioById(Long id) {
     try {
       usuarioService.deleteUsuarioById(id);

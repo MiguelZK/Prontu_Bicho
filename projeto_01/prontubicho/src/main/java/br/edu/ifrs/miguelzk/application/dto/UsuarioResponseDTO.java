@@ -11,14 +11,15 @@ import lombok.Data;
 
 @Data
 public class UsuarioResponseDTO {
-  private Long idUsuario;
-  private String userName;
-  private String nomeCompleto;
-  private Cpf cpf;
-  private Date dataNascimento;
-  private Date dataCadastro;
-  private Set<Telefone> telefones;
-  private Set<Endereco> enderecos;
-  private Set<String> emails;
-  private Set<Animal> animais;
+    private Long idUsuario;
+    private String userName;
+    private String role;
+    private String nomeCompleto;
+    private Cpf cpf;
+    private Date dataNascimento;
+    private Date dataCadastro;
+    private Set<Telefone> telefones;
+    private Set<Endereco> enderecos;
+    private Set<String> emails;
+    private Set<Animal> animais;
 }
