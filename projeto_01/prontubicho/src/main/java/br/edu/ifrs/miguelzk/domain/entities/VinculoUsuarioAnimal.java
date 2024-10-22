@@ -5,12 +5,9 @@ import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.Date;
-import java.util.Set;
-
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = true)
 public class VinculoUsuarioAnimal extends PanacheEntity {
     private String nomeAnimal;
 //    private Date inicioVinculo;

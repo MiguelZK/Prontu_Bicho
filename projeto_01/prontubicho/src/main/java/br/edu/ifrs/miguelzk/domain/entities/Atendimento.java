@@ -1,18 +1,18 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
 import java.util.Date;
+import java.util.Objects;
 import java.util.Set;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = true)
 public class Atendimento extends PanacheEntityBase {
 //    private DateJavaType dataAtendimento;
 
@@ -37,19 +37,35 @@ public class Atendimento extends PanacheEntityBase {
     private String observarProxConsulta;
 //    private List<DateJavaType> validacaoPelosTutores;
 
+    @ToString.Exclude
     @ManyToOne
-    @JoinColumn(name="idAnimal")
+    @JoinColumn(name = "idAnimal")
     private Animal animal;
 
+    @ToString.Exclude
     @ManyToMany
-    @JoinTable( name="atendim_usuarios",
-            joinColumns={ @JoinColumn(name="idAtendimento")},
-            inverseJoinColumns={@JoinColumn(name="idUsuario")})
+    @JoinTable(name = "atendim_usuarios",
+            joinColumns = {@JoinColumn(name = "idAtendimento")},
+            inverseJoinColumns = {@JoinColumn(name = "idUsuario")})
     private Set<Usuario> usuarios;
 
+    @ToString.Exclude
     @ManyToMany
-    @JoinTable( name="atendim_medvets",
-            joinColumns={ @JoinColumn(name="idAtendimento")},
-            inverseJoinColumns={@JoinColumn(name="cmrv")})
+    @JoinTable(name = "atendim_medvets",
+            joinColumns = {@JoinColumn(name = "idAtendimento")},
+            inverseJoinColumns = {@JoinColumn(name = "cmrv")})
     private Set<MedVet> medVets;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Atendimento that = (Atendimento) o;
+        return Objects.equals(idAtendimento, that.idAtendimento);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idAtendimento);
+    }
 }

@@ -54,21 +54,21 @@ public class DataLoader {
             LOG.info("Usuario 2: " + usuario2);
             LOG.info("Usuario 3: " + usuario3);
 
-            LOG.info("Usuario 1 do BD: " + animal1);
+            animal1.getUsuarios().add(usuario1);
+            animal1.getUsuarios().add(usuario2);
+            animal2.getUsuarios().add(usuario3);
+            animal3.getUsuarios().add(usuario3);
 
             // Persistir as atualizações nos usuários
             usuarioRepository.save(usuario1);
             usuarioRepository.save(usuario2);
             usuarioRepository.save(usuario3);
 
-            /*animal1.getUsuarios().add(usuario1);
-            animal1.getUsuarios().add(usuario2);
-            animal2.getUsuarios().add(usuario3);
-            animal3.getUsuarios().add(usuario3);
+            LOG.info("Usuario 1 do BD: " + animal1);
 
             animalRepository.save(animal1);
             animalRepository.save(animal2);
-            animalRepository.save(animal3);*/
+            animalRepository.save(animal3);
 
             LOG.info("Dados carregados com sucesso.");
         }

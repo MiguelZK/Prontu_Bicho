@@ -5,14 +5,14 @@ import jakarta.persistence.*;
 
 import br.edu.ifrs.miguelzk.domain.enums.PorteCachorro;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = true)
 public class Animal extends PanacheEntityBase {
 
     @Id
@@ -65,12 +65,14 @@ public class Animal extends PanacheEntityBase {
     @Enumerated(EnumType.STRING)
     private PorteCachorro porteCachorro;
 
+    @ToString.Exclude
     @ManyToMany(cascade = CascadeType.PERSIST, targetEntity = Usuario.class)
     @JoinTable( name="animal_usuario",
             joinColumns={ @JoinColumn(name="idAnimal")},
             inverseJoinColumns={@JoinColumn(name="idUsuario")})
     private Set<Usuario> usuarios;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "animal")
     private Set<Atendimento> atendimentos;
 
@@ -82,4 +84,17 @@ public class Animal extends PanacheEntityBase {
     }
 
     public Animal() {}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(idAnimal, animal.idAnimal);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idAnimal);
+    }
 }

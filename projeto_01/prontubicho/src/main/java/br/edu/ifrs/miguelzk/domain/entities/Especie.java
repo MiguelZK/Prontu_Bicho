@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 public class Especie extends PanacheEntityBase {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEspecie;
 
     @Column(nullable = false)

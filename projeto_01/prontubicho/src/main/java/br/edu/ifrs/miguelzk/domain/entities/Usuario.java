@@ -1,6 +1,7 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,12 +14,11 @@ import io.quarkus.security.jpa.Username;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Entity
-@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Data
-@EqualsAndHashCode(callSuper = true)
 @UserDefinition
 public class Usuario extends PanacheEntityBase {
 
@@ -26,12 +26,12 @@ public class Usuario extends PanacheEntityBase {
     @GeneratedValue
     private Long idUsuario;
 
-//    @NotBlank(message = "Login é obrigatório")
+    //    @NotBlank(message = "Login é obrigatório")
     @Column(unique = true)
     @Username
     private String userName;
 
-//    @NotBlank(message = "Senha é obrigatória")
+    //    @NotBlank(message = "Senha é obrigatória")
 //    @JsonIgnore
     @Password
     private String password;
@@ -52,6 +52,7 @@ public class Usuario extends PanacheEntityBase {
     @CollectionTable(name="emails")
     private Set<String> emails;*/
 
+    @ToString.Exclude
     @ManyToMany(mappedBy = "usuarios")
     private Set<Animal> animais;
 
@@ -63,20 +64,37 @@ public class Usuario extends PanacheEntityBase {
         this.animais = new HashSet<>();
     }
 
-    public Usuario() {}
+    public Usuario() {
+    }
 
-/*    @OneToOne (cascade = CascadeType.PERSIST)
+/*    @ToString.Exclude
+@OneToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "idCpf")
     private Cpf cpf;
 
-    @OneToMany
+    @ToString.Exclude
+@OneToMany
     @JoinColumn (name = "idTelefone")
     private Set<Telefone> telefones;
 
-    @OneToMany
+    @ToString.Exclude
+@OneToMany
     @JoinColumn (name = "idEndereco")
     private Set<Endereco> enderecos;
  */
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(idUsuario, usuario.idUsuario);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idUsuario);
+    }
 
     public static void add(String userName, String password, String role) {
         Usuario usuario = new Usuario();

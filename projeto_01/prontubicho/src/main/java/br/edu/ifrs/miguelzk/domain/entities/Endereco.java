@@ -22,7 +22,8 @@ public class Endereco extends PanacheEntityBase {
     private int cep;
     private String tipo;
 
-/*    @ManyToOne (cascade = CascadeType.PERSIST)
+/*    @ToString.Exclude
+@ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "idUsuario")
     private Usuario usuario;*/
 }

@@ -5,9 +5,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = true)
 public class Telefone extends PanacheEntityBase {
 
     @Id
@@ -19,7 +19,8 @@ public class Telefone extends PanacheEntityBase {
     private int numero;
     private String tipo;
 
-/*    @ManyToOne (cascade = CascadeType.PERSIST)
+/*    @ToString.Exclude
+@ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "idUsuario")
     private Usuario usuario;*/
 }

@@ -11,13 +11,14 @@ import lombok.EqualsAndHashCode;
 public class Cpf extends PanacheEntityBase {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCpf;
 
     private Long numero;
     private int digito;
 
-/*    @OneToOne
+/*    @ToString.Exclude
+@OneToOne
     private Usuario usuario;*/
 
 }
