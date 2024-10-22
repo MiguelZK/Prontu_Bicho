@@ -23,8 +23,6 @@ public class AnimalController {
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response createAnimal(@RequestBody AnimalRequestDTO request) {
-    System.out.println("Request antes de criar animal " + request);
-    System.out.println("Response antes de criar animal " + Response.ok().entity(animalService.createAnimal(request)).build());
     return Response.ok().entity(animalService.createAnimal(request)).build();
   }
 

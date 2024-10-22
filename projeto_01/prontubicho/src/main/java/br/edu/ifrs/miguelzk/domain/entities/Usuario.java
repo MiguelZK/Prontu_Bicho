@@ -1,5 +1,6 @@
 package br.edu.ifrs.miguelzk.domain.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -53,6 +54,16 @@ public class Usuario extends PanacheEntityBase {
 
     @ManyToMany(mappedBy = "usuarios")
     private Set<Animal> animais;
+
+    public Usuario(String nomeCompleto, String userName, String password, String role) {
+        this.nomeCompleto = nomeCompleto;
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
+        this.animais = new HashSet<>();
+    }
+
+    public Usuario() {}
 
 /*    @OneToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "idCpf")

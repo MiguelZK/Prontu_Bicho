@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import br.edu.ifrs.miguelzk.domain.enums.PorteCachorro;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -72,4 +74,12 @@ public class Animal extends PanacheEntityBase {
     @OneToMany(mappedBy = "animal")
     private Set<Atendimento> atendimentos;
 
+    public Animal(String nomeAnimal, String porteCachorro) {
+        this.nomeAnimal = nomeAnimal;
+        this.porteCachorro = PorteCachorro.valueOf(porteCachorro);
+        this.usuarios = new HashSet<>();
+        this.atendimentos = new HashSet<>();
+    }
+
+    public Animal() {}
 }

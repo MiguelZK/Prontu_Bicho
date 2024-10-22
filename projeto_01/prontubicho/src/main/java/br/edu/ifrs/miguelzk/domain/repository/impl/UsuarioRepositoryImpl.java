@@ -40,4 +40,9 @@ public class UsuarioRepositoryImpl implements UsuarioRepository, PanacheReposito
   public void deleteUsuarioById(Long id) {
     deleteById(id);
   }
+
+  @Override
+  public long contaUsuarios() {
+    return count();
+  }
 }

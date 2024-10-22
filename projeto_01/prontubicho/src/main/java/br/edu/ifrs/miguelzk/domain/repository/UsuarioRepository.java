@@ -11,4 +11,6 @@ public interface UsuarioRepository {
     Usuario save(Usuario usuario);
     Usuario update(Usuario usuario);
     void deleteUsuarioById(Long id);
+
+    long contaUsuarios();
 }

@@ -11,4 +11,6 @@ public interface AnimalRepository {
     Animal save(Animal animal);
     Animal update(Animal animal);
     void deleteAnimalById(Long id);
+
+    long contaAnimais();
 }

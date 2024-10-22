@@ -42,4 +42,9 @@ public class AnimalRepositoryImpl implements AnimalRepository, PanacheRepository
     deleteById(id);
   }
 
+  @Override
+  public long contaAnimais() {
+    return count();
+  }
+
 }
