@@ -7,7 +7,7 @@ public interface UsuarioRepository {
     
     Usuario findUsuarioById(Long id);
     List<Usuario> findUsuarioAll();
-    List<Usuario> findUsuarioByName(String nomeUsuario);
+    List<Usuario> findUsuarioByName(String userName);
     Usuario save(Usuario usuario);
     Usuario update(Usuario usuario);
     void deleteUsuarioById(Long id);

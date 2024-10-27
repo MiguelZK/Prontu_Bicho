@@ -1,8 +1,6 @@
 package br.edu.ifrs.miguelzk.presentation.controller;
 
-import br.edu.ifrs.miguelzk.application.dto.AnimalRequestDTO;
 import jakarta.annotation.security.PermitAll;
-import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.*;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import br.edu.ifrs.miguelzk.application.dto.UsuarioRequestDTO;
@@ -55,10 +53,10 @@ public class UsuarioController {
   }
 
   @GET
-  @Path("/{nomeUsuario}")
+  @Path("/{userName}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response findUsuarioByName(@PathParam("nomeUsuario") String nomeUsuario) {
-    return Response.ok().entity(usuarioService.findUsuarioByName(nomeUsuario)).build();
+  public Response findUsuarioByName(@PathParam("userName") String userName) {
+    return Response.ok().entity(usuarioService.findUsuarioByName(userName)).build();
   }
 
   @DELETE

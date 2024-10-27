@@ -8,7 +8,7 @@ public interface FindUsuarioUseCase {
 
   UsuarioResponseDTO execute(Long id);
 
-  List<UsuarioResponseDTO> execute(String nomeUsuario);
+  List<UsuarioResponseDTO> execute(String userName);
 
   List<UsuarioResponseDTO> execute();
 

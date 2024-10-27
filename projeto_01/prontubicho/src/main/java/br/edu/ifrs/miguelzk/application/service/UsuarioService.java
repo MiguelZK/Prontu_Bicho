@@ -47,8 +47,8 @@ public class UsuarioService {
     return findUsuarioUseCase.execute(id);
   }
 
-  public List<UsuarioResponseDTO> findUsuarioByName(String nomeUsuario) {
-    return findUsuarioUseCase.execute(nomeUsuario);
+  public List<UsuarioResponseDTO> findUsuarioByName(String userName) {
+    return findUsuarioUseCase.execute(userName);
   }
 
   public void deleteUsuarioById(Long id) {

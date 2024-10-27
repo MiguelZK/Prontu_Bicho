@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
@@ -39,11 +40,13 @@ public class Atendimento extends PanacheEntityBase {
 
     @ToString.Exclude
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "idAnimal")
     private Animal animal;
 
     @ToString.Exclude
     @ManyToMany
+    @JsonBackReference
     @JoinTable(name = "atendim_usuarios",
             joinColumns = {@JoinColumn(name = "idAtendimento")},
             inverseJoinColumns = {@JoinColumn(name = "idUsuario")})
@@ -51,6 +54,7 @@ public class Atendimento extends PanacheEntityBase {
 
     @ToString.Exclude
     @ManyToMany
+    @JsonBackReference
     @JoinTable(name = "atendim_medvets",
             joinColumns = {@JoinColumn(name = "idAtendimento")},
             inverseJoinColumns = {@JoinColumn(name = "cmrv")})

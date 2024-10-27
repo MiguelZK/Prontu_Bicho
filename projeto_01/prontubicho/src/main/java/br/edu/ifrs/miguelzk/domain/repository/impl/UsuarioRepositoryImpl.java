@@ -21,8 +21,8 @@ public class UsuarioRepositoryImpl implements UsuarioRepository, PanacheReposito
   }
 
   @Override
-  public List<Usuario> findUsuarioByName(String nomeUsuario) {
-    return find("nome like ?1", "%" + nomeUsuario + "%").list();
+  public List<Usuario> findUsuarioByName(String userName) {
+    return find("userName like ?1", "%" + userName + "%").list();
   }
 
   @Override
